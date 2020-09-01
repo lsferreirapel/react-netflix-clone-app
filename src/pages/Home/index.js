@@ -1,19 +1,24 @@
+// importing react components
 import React, { useEffect, useState } from 'react';
 
 // import services
 import Tmdb from '../../services/Tmdb';
 
-// import components
+// importing page components
+import Header from '../../components/Header';
+import FeaturedMovie from '../../components/FeaturedMovie.js';
 import MovieRow from '../../components/MovieRow';
-import FeaturedMovie from '../../components/FeaturedMovie.js'
+import Footer from '../../components/Footer';
 
-// import styles
+// importing styles
 import { Page, MoviesList } from './styles';
 
 function Home() {
-    
+  
+  // adding states
   const [movieList, setMovieList] = useState([]);
   const [featureData, setFeatureData] = useState(null);
+  const [headerState, setHeaderState] = useState("transparent"); // transparent or black(#141414)
 
   useEffect(() => {
     const loadAll = async () => {
@@ -33,8 +38,26 @@ function Home() {
     loadAll();
   }, []);
 
+  useEffect (() => {
+    const scrollListener = () => {
+      if(window.scrollY > 10) {
+        setHeaderState("#141414");
+      }
+      else {
+        setHeaderState("transparent");
+      } 
+    }
+
+    window.addEventListener('scroll', scrollListener);
+      
+    return () => {
+      window.removeEventListener('scroll', scrollListener);
+    }
+  }, []);
+
   return (
     <Page>
+      <Header backgroundState={headerState}/>
 
       {featureData && 
         <FeaturedMovie item={featureData}/>
@@ -45,6 +68,8 @@ function Home() {
           <MovieRow key={key} title={item.title} items={item.items}/>
         ))}
       </MoviesList>
+
+      <Footer />
     </Page>
   )
 }
