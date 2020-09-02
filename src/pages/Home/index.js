@@ -11,7 +11,10 @@ import MovieRow from '../../components/MovieRow';
 import Footer from '../../components/Footer';
 
 // importing styles
-import { Page, MoviesList } from './styles';
+import { Page, MoviesList, Loading } from './styles';
+
+// importing loading gif
+import LoadingGif from '../../assets/img/loading.gif'
 
 function Home() {
   
@@ -59,17 +62,29 @@ function Home() {
     <Page>
       <Header backgroundState={headerState}/>
 
+
       {featureData && 
         <FeaturedMovie item={featureData}/>
       }
       
-      <MoviesList>
+      {(movieList.length) ? (
+        <>
+        <MoviesList>
         {movieList.map((item, key) => (
           <MovieRow key={key} title={item.title} items={item.items}/>
         ))}
-      </MoviesList>
+        </MoviesList>
 
-      <Footer />
+        <Footer />
+        </>
+      ) : (
+          <Loading>
+            <img src={LoadingGif} alt="loading"></img>
+          </Loading>
+      ) }
+
+      
+      
     </Page>
   )
 }

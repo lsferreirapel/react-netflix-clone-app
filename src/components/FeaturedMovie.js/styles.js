@@ -24,19 +24,28 @@ export const Container = styled.div`
         padding-bottom: 150px;
         padding-top: 70px;
     }
+
+    @media (max-width:760px) {
+        height: 90vh;
+    }
 `;
-
-
-
 
 export const Name = styled.div`
     font-size: 60px;
     font-weight: bold;
+
+    @media (max-width:760px) {
+        font-size: 40px;
+    }
 `;
 export const Info = styled.div`
     font-size: 18px;
     font-weight: bold;
     margin-top: 15px;
+
+    @media (max-width:760px) {
+        font-size: 16px;   
+    }
 `;
 
 
@@ -60,6 +69,23 @@ export const Description = styled.div`
     font-size: 20px;
     color: #999;
     width: 40%;
+
+    a {
+        color: #FFF;
+        font-size: 12px;
+        transition: all ease .3s;
+
+        :hover {
+            color: #E50914;
+            cursor: pointer;
+        }
+    }
+
+    @media (max-width:760px) {
+        font-size: 14px;
+        max-width: 100%;
+        margin-right: 30px;
+    }
 `;
 export const Buttons = styled.div`
     margin-top: 15px;
@@ -74,6 +100,10 @@ export const Buttons = styled.div`
         margin-right: 10px;
         opacity: 1;
         transition: all ease .2s;
+
+        @media (max-width:760px) {
+            font-size: 16px;
+        }
     }
 
     .featured--watchbutton:hover, .featured--mylistbutton:hover {
@@ -94,4 +124,8 @@ export const Genres = styled.div`
     margin-top: 15px;
     font-size: 18px;
     color: #999;
+
+    @media (max-width:760px) {
+        font-size: 14px;
+    }
 `;

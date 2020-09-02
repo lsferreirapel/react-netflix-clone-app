@@ -18,7 +18,7 @@ const FeaturedMovie = ({item}) => (
                     <Year>{(new Date(item.first_air_date)).getFullYear()}</Year>
                     <Seasons>{item.number_of_seasons} Temporada{item.number_of_seasons !== 1 ? 's' : ''}</Seasons>
                 </Info>
-                <Description>{item.overview}</Description>
+                <Description>{ (item.overview.length >= 150) ? item.overview.slice(0, 145).concat("...") : item.overview } {(item.overview.length >= 145) ? (<a href="/">Ver mais.</a>) : ""}</Description>
                 <Buttons>
                     <a className="featured--watchbutton" href={`/watch/${item.id}` }>► Assistir</a>
                     <a className="featured--mylistbutton" href={`/list/add/${item.id}`}>+ Minha Lista</a>

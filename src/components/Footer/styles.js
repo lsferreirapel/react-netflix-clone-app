@@ -9,9 +9,11 @@ export const Container = styled.footer`
     a {
         transition: all ease .6s;
         font-weight: bold;
+        text-decoration: none;
+        color: #999;
 
         :hover {
-            color: red;
+            color: #E50914;
             cursor: pointer
         }
     }
@@ -21,15 +23,18 @@ export const Icons = styled.div`
 
     display: flex;
     justify-content: center;
+    align-items: center;
 
     img {
         margin: 10px;
         margin-bottom: 16px;
         width: 40px;
         opacity: 1;
-        transition: all ease .6s;
+        transform: scale(1);
+        transition: opacity ease .6s;
     }
     img:hover {
+        transform: scale(1.05);
         cursor: pointer;
         opacity: .5;
     }
