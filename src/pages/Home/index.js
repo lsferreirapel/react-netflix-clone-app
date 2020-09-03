@@ -5,8 +5,9 @@ import React, { useEffect, useState } from 'react';
 import Tmdb from '../../services/Tmdb';
 
 // importing page components
+// import DialogInfo from '../../components/DialogInfo';
 import Header from '../../components/Header';
-import FeaturedMovie from '../../components/FeaturedMovie.js';
+import FeaturedMovie from '../../components/FeaturedMovie';
 import MovieRow from '../../components/MovieRow';
 import Footer from '../../components/Footer';
 
@@ -22,6 +23,8 @@ function Home() {
   const [movieList, setMovieList] = useState([]);
   const [featureData, setFeatureData] = useState(null);
   const [headerState, setHeaderState] = useState("transparent"); // transparent or black(#141414)
+  
+  
 
   useEffect(() => {
     const loadAll = async () => {
@@ -60,11 +63,11 @@ function Home() {
 
   return (
     <Page>
+      
       <Header backgroundState={headerState}/>
 
-
       {featureData && 
-        <FeaturedMovie item={featureData}/>
+        <FeaturedMovie item={featureData} />
       }
       
       {(movieList.length) ? (

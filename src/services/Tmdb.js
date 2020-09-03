@@ -11,6 +11,19 @@ const API_BASE = 'https://api.themoviedb.org/3';
     -romace
     -documentary
 */
+
+/*
+    Movies:
+    movie-details: https://api.themoviedb.org/3/movie/550?api_key=0e0aeac00f34d1d256c5b3fbc93db04a&language=pt-BR
+    movie-credits: https://api.themoviedb.org/3/movie/550/credits?api_key=0e0aeac00f34d1d256c5b3fbc93db04a&language=pt-BR
+    movie-similar: https://api.themoviedb.org/3/movie/550/similar?api_key=0e0aeac00f34d1d256c5b3fbc93db04a&language=pt-BR&page=1
+    movie-trailer: https://api.themoviedb.org/3/movie/550/videos?api_key=0e0aeac00f34d1d256c5b3fbc93db04a&language=pt-BR
+
+    TV
+    
+*/
+
+
 const basicFetch = async (endpoint) => {
     const request = await fetch(`${API_BASE}${endpoint}language=pt-BR&api_key=${API_KEY}`);
     const json = await request.json();

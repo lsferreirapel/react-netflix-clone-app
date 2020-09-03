@@ -70,7 +70,11 @@ export const Description = styled.div`
     color: #999;
     width: 40%;
 
-    a {
+    div {
+        display: inline-block;
+    }
+    .open-button {
+        display: inline-block;
         color: #FFF;
         font-size: 12px;
         transition: all ease .3s;
@@ -92,9 +96,9 @@ export const Buttons = styled.div`
 
     .featured--watchbutton, .featured--mylistbutton {
         display: inline-block;
-        font-size: 20px;
+        font-size: 1.6rem;
         font-weight: bold;
-        padding: 12px 25px;
+        padding: 1rem 2rem;
         border-radius: 5px;
         text-decoration: none;
         margin-right: 10px;
@@ -107,7 +111,7 @@ export const Buttons = styled.div`
     }
 
     .featured--watchbutton:hover, .featured--mylistbutton:hover {
-        opacity: .7;
+        opacity: .5;
     }
 
     .featured--watchbutton {
@@ -115,7 +119,8 @@ export const Buttons = styled.div`
         color: #000;
     }
     .featured--mylistbutton {
-        background-color: #333;
+        background-color: rgba(109,109,110,0.7);;
+        
         color: #FFF;
     }
 

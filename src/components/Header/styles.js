@@ -11,8 +11,8 @@ export const Container = styled.header`
     justify-content: space-between;
     align-items: center;
     padding: 0 30px;
+    background-image: linear-gradient(rgb(20, 20, 20), ${props => props.background});  
     transition: all ease .5s;
-    background: ${props => props.background};  
 `;
 
 export const Logo = styled.div`
