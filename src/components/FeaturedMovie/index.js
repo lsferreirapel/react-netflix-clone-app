@@ -20,14 +20,14 @@ const FeaturedMovie = ({item}) => {
                 <div className="featured--horizontal">
                     <Name>{item.original_name}</Name>
                     <Info>
-                        <Rating>{item.vote_average} pontos</Rating>
+                        <Rating>{item.vote_average * 10}% relevante</Rating>
                         <Year>{(new Date(item.first_air_date)).getFullYear()}</Year>
                         <Seasons>{item.number_of_seasons} Temporada{item.number_of_seasons !== 1 ? 's' : ''}</Seasons>
                     </Info>
-                    <Description>{ (item.overview.length >= 150) ? item.overview.slice(0, 145).concat("...") : item.overview } {(item.overview.length >= 145) ? (<DialogInfo openButton={(<button />)} buttonName="Ver mais."/>) : ""}</Description>
+                    <Description>{ (item.overview.length >= 150) ? item.overview.slice(0, 145).concat("...") : item.overview }</Description>
                     <Buttons>
                         <a className="featured--watchbutton" href={`/watch/${item.id}` }>► Assistir</a>
-                        <a className="featured--mylistbutton" href={`/list/add/${item.id}`}>+ Mais Informações</a>
+                        <DialogInfo buttonClass="featured--mylistbutton">+ Mais Informações</DialogInfo>
                     </Buttons>
                     <Genres><strong>Gêneros:</strong> {item.genres.map(item => item.name).join(', ')}</Genres>
                 </div>

@@ -14,9 +14,9 @@ import { TitleContainer, LinearGradient, CloseButton, TitleInfo, Buttons } from 
 /* Dialog info style */
 import { MainInfo, RateInfo, Description,  FilmInfo, Cast, Genres, Tags } from './styles';
 /* Dialog sugestion list style */
-import { About, AboutInfo, Director, AboutCast, AboutGenres, Script } from './styles';
+import { About, AboutInfo, Director, AboutCast, AboutGenres, AboutScript, AboutTags } from './styles';
 /* Dialog about style */
-import { Sugestion, List } from './styles';
+import { Sugestion, List, ListCard, SectionDivider } from './styles';
 /* Reset to dialog default values */
 import './reset.css';
 
@@ -34,7 +34,10 @@ import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ThumbDownOutlinedIcon from '@material-ui/icons/ThumbDownOutlined';
 import ThumbDownAltIcon from '@material-ui/icons/ThumbDownAlt';
 
-export default function ScrollDialog({openButton, buttonName}) {
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ExpandLessIcon from '@material-ui/icons/ExpandLess';
+
+export default function ScrollDialog({children, buttonClass="open-button"}) {
   /* React Hooks */
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState('body');
@@ -64,7 +67,7 @@ export default function ScrollDialog({openButton, buttonName}) {
 
   return (
     <Container>  
-      <openButton onClick={handleClickOpen('body')} className="open-button">{buttonName}</openButton>
+      <button onClick={handleClickOpen('body')}className={buttonClass}>{children}</button>
       <Dialog 
         open={open}
         onClose={handleClose}
@@ -117,6 +120,10 @@ export default function ScrollDialog({openButton, buttonName}) {
                         <a>Meat Loaf, </a>
                         <a className="seemore">mais</a>
                       </Cast>
+                      <Genres>
+                        <span className="name">Gêneros: </span>
+                        <a>Drama</a>
+                      </Genres>
                       <Tags>
                         <span className="name">Tags: </span>
                         <a>Má conduta, </a>
@@ -124,35 +131,101 @@ export default function ScrollDialog({openButton, buttonName}) {
                         <a>Sabão, </a>
                         <a className="seemore">mais</a>
                       </Tags>
-                      <Genres>
-                        <span className="name">Gêneros: </span>
-                        <a>Drama</a>
-                      </Genres>
                   </FilmInfo>
               </MainInfo>
               <Sugestion>
                   <p className="sugestion-title">Títulos semelhantes</p>
-                  <List />
+                  <List>
+                    <ListCard>
+                      <img className="list-card-image" src="https://via.placeholder.com/350x150"></img>
+                      <div className="list-card-info">
+                        <span className="card-info-rate">90% relevante</span>
+                        <div className="card-info-year">2020</div>
+                      </div>
+                      <p className="list-card-description">Um homem deprimido que sofre de insônia conhece um estranho vendedor chamado Tyler Durden e se vê morando em uma casa suja depois que seu perfeito apartamento é destruído. A dupla forma um clube com regras rígidas onde homens lutam. A parceria perfeita é comprometida quando uma mulher, Marla, atrai a atenção de Tyler.</p>
+                    </ListCard>
+                    <ListCard>
+                      <img className="list-card-image" src="https://via.placeholder.com/350x150"></img>
+                      <div className="list-card-info">
+                        <span className="card-info-rate">90% relevante</span>
+                        <div className="card-info-year">2020</div>
+                      </div>
+                      <p className="list-card-description">Uja depois que seu perfeito apartamento é destruído. A dupla forma um clube com regras rígidas onde homens lutam. A parceria perfeita é comprometida quando uma mulher, Marla, atrai a atenção de Tyler.</p>
+                    </ListCard>
+                    <ListCard>
+                      <img className="list-card-image" src="https://via.placeholder.com/350x150"></img>
+                      <div className="list-card-info">
+                        <span className="card-info-rate">90% relevante</span>
+                        <div className="card-info-year">2020</div>
+                      </div>
+                      <p className="list-card-description">Um homem deprimido que sofre de vendedor chamado Tyler Durden e se vê morando em uma casa suja depois que seu perfeito apartamento é destruído. A dupla forma um clube com regras rígidas onde homens lutam. A parceria perfeita é comprometida quando uma mulher, Marla, atrai a atenção de Tyler.</p>
+                    </ListCard>
+                    <ListCard>
+                      <img className="list-card-image" src="https://via.placeholder.com/350x150"></img>
+                      <div className="list-card-info">
+                        <span className="card-info-rate">90% relevante</span>
+                        <div className="card-info-year">2020</div>
+                      </div>
+                      <p className="list-card-description">Um homem  que sofre de insônia conhece um estranho vendedor chamado Tyler Durden e se vê morando em uma casa suja depois que seu perfeito apartamento é destruído. A dupla forma um clube com regras rígidas onde homens lutam. A parceria perfeita é comprometida quando uma mulher, Marla, atrai a atenção de Tyler.</p>
+                    </ListCard>
+                    <ListCard>
+                      <img className="list-card-image" src="https://via.placeholder.com/350x150"></img>
+                      <div className="list-card-info">
+                        <span className="card-info-rate">90% relevante</span>
+                        <div className="card-info-year">2020</div>
+                      </div>
+                      <p className="list-card-description"> homem deprimido que sofre de insônia conhece um estranho vendedor chamado Tyler Durden e se vê morando em uma casa suja depois que seu perfeito apartamento é destruído. A dupla forma um clube com regras rígidas onde homens lutam. A parceria perfeita é comprometida quando uma mulher, Marla, atrai a atenção de Tyler.</p>
+                    </ListCard>
+                    <ListCard>
+                      <img className="list-card-image" src="https://via.placeholder.com/350x150"></img>
+                      <div className="list-card-info">
+                        <span className="card-info-rate">90% relevante</span>
+                        <div className="card-info-year">2020</div>
+                      </div>
+                      <p className="list-card-description">Um homemendedor chamado Tyler Durden e se vê morando em uma casa suja depois que seu perfeito apartamento é destruído. A dupla forma um clube com regras rígidas onde homens lutam. A parceria perfeita é comprometida quando uma mulher, Marla, atrai a atenção de Tyler.</p>
+                    </ListCard>
+                    <ListCard>
+                      <img className="list-card-image" src="https://via.placeholder.com/350x150"></img>
+                      <div className="list-card-info">
+                        <span className="card-info-rate">90% relevante</span>
+                        <div className="card-info-year">2020</div>
+                      </div>
+                      <p className="list-card-description">Um homem deprimido que sofre de insônia conhece um estranho vendedor chamado Tyler Durden e se vê morando em uma casa suja depois que seu perfeito apartamento é destruído. A dupla forma um clube com regras rígidas onde homens lutam. A parceria perfeita é comprometida quando uma mulher, Marla, atrai a atenção de Tyler.</p>
+                    </ListCard>
+                  </List>
               </Sugestion>
+              <SectionDivider>
+                <button className="arrow-button"><ExpandLessIcon fontSize="large"/></button>
+              </SectionDivider>
               <About>
                   <p className="sugestion-title"> Sobre Fight Club</p>
                   <AboutInfo>
                       <Director>
-                        <span className="tag-name"></span>
-                        <a></a>
+                        <span className="tag-name">Direção: </span>
+                        <a>David Fincher</a>
                       </Director>
                       <AboutCast>
-                        <span className="tag-name"></span>
-                        <a></a>
+                        <span className="tag-name">Elenco: </span>
+                        <a>Edward Norton, </a>
+                        <a>Brad Pitt, </a>
+                        <a>Helena Bonham Carter, </a>
+                        <a>Meat Loaf, </a>
                       </AboutCast>
-                      <Script>
-                        <span className="tag-name"></span>
-                        <a></a>
-                      </Script>
+                      <AboutScript>
+                        <span className="tag-name">Roteiro: </span>
+                        <a>Jim Uhls, </a>
+                        <a>Chuck Palahniuk</a>
+                      </AboutScript>
                       <AboutGenres>
-                        <span className="tag-name"></span>
-                        <a></a>
+                        <span className="tag-name">Gêneros: </span>
+                        <a>Drama</a>
                       </AboutGenres>
+                      <AboutTags>
+                        <span className="tag-name">Tags: </span>
+                        <a>Má conduta, </a>
+                        <a>Caos, </a>
+                        <a>Sabão, </a>
+                      </AboutTags>
                   </AboutInfo>
               </About>
             </MainContent>

@@ -61,6 +61,7 @@ export const TitleInfo = styled.div`
         color: #fff;
         font-size: 60px;
         font-weight: bold;
+        cursor: pointer;
 
         @media (max-width:760px) {
             font-size: 40px;
@@ -91,7 +92,9 @@ export const Buttons = styled.div`
     }
 
     .watch-button {
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
 
         /* Font congis */
         font-size: 1.6rem;
@@ -121,6 +124,8 @@ export const MainInfo = styled.div`
     display: flex; 
     flex-flow: row wrap;
     justify-content: space-between;
+
+    cursor: default;
 `;
 
 export const RateInfo = styled.div`
@@ -148,6 +153,7 @@ export const RateInfo = styled.div`
     }
 `;
 export const Description = styled.div`
+    font-size: 18px;
     margin: 18px 0 9px 0;
     width: 90%;
 `;
@@ -166,6 +172,10 @@ const fimeInfoItem = styled.div`
     margin: 7px;
     margin-left: 0;
 
+    a:hover {
+        text-decoration: underline;
+        cursor:pointer;
+    }
     .name{
         color: #777;
     };
@@ -191,38 +201,137 @@ export const Genres = styled(fimeInfoItem)`
 export const Sugestion = styled.div`
 
     .sugestion-title {
-
+        font-weight: 700;
+        font-size: 24px;
+        margin-top: 48px;
+        margin-bottom: 20px;
+        color: #FFF;
     }
 `;
-export const List = styled.div``;
+export const List = styled.div`
+    display: grid;
+    grid-template-columns: repeat(3, 31.5%);
+    grid-gap: 1.2em;
+    justify-content: space-around;
+`;
+
+
+export const ListCard = styled.div`
+    background-color: #2f2f2f;
+    display: flex;
+    flex-flow: column wrap;
+    font-size: 16px;
+    border-radius: .25em;
+    overflow: hidden;
+    margin-top: 10px;
+
+    .list-card-image {
+        width: 100%;
+        height: 22vh;
+    }
+    .list-card-info {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 1em;
+
+        .card-info-rate {
+            color: #46d369;
+            font-weight: bold;
+        }
+        .card-info-year {
+            color: #fff;
+            font-weight: bold;
+        }
+
+    }
+    .list-card-description {
+        align-items: flex-start;
+        padding: 0 1em 1em;
+        color: #d2d2d2;
+        font-size: 14px;
+        line-height: 20px;
+    }
+`;
 /**----------------------------------------------------**/
 
+export const SectionDivider = styled.div`
+    width: 100%;
+    height: 6em;
+    border-bottom: 2px solid #404040;
+    display: flex;
+    background: transparent;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+
+    .arrow-button {
+        display: flex;
+        align-items: center;
+        border-radius: 50%;
+        background-color: #2a2a2a;
+        border: 1px solid rgba(255, 255, 255, .7);
+        color: white;
+        position: absolute;
+        bottom: -18px;
+        padding: .8rem;
+        cursor: pointer;
+    }
+`
 
 /* Dialog about style */
 export const About = styled.div`
 
     .sugestion-title {
-
+        font-weight: 700;
+        font-size: 24px;
+        margin-top: 48px;
+        margin-bottom: 20px;
+        color: #FFF;
     }
 `;
 export const AboutInfo = styled.div`
 
 `;
 
-const tagName = styled.span`
+const aboutDefault = styled.div`
+    font-size: 14px;
+    line-height: 20px;
+    margin-left: 0;
+    word-break: break-word;
+    color: #FFF;
+    margin: 7px;
+    margin-left: 0;
+    color: #fff;
 
+    a:hover {
+        text-decoration: underline;
+        cursor:pointer;
+    }
+    .tag-name {
+        color: #777;
+    }
+    a {
+
+    }
 `;
-export const Director = styled.div`
-    .tag-name{${tagName}}
+export const Director = styled(aboutDefault)`
+    
 `;
-export const AboutCast = styled.div`
-    .tag-name{${tagName}}
+export const AboutCast = styled(aboutDefault)`
+    
 `;
-export const Script = styled.div`
-    .tag-name{${tagName}}
+export const AboutScript = styled(aboutDefault)`
+    
 `;
-export const AboutGenres = styled.div`
-    .tag-name{${tagName}}
+export const AboutGenres = styled(aboutDefault)`
+    
+`;
+export const AboutTags = styled(aboutDefault)`
+
 `;
 /**----------------------------------------------------**/
 

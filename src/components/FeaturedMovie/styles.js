@@ -73,17 +73,6 @@ export const Description = styled.div`
     div {
         display: inline-block;
     }
-    .open-button {
-        display: inline-block;
-        color: #FFF;
-        font-size: 12px;
-        transition: all ease .3s;
-
-        :hover {
-            color: #E50914;
-            cursor: pointer;
-        }
-    }
 
     @media (max-width:760px) {
         font-size: 14px;
@@ -93,6 +82,7 @@ export const Description = styled.div`
 `;
 export const Buttons = styled.div`
     margin-top: 15px;
+    display: flex;
 
     .featured--watchbutton, .featured--mylistbutton {
         display: inline-block;
