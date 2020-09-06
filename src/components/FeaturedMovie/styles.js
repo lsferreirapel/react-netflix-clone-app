@@ -10,13 +10,13 @@ export const Container = styled.div`
     .featured--vertical {
         width: inherit;
         height: inherit;
-        background: linear-gradient(to top, #111 10%, transparent 90%);
+        background: linear-gradient(to top, var(--bg-primary) 10%, transparent 90%);
     }
 
     .featured--horizontal {
         width: inherit;
         height: inherit;
-        background: linear-gradient(to right, #111 30%, transparent 70%);
+        background: linear-gradient(to right, var(--bg-primary) 30%, transparent 70%);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -51,7 +51,7 @@ export const Info = styled.div`
 
 export const Rating = styled.div`
     display: inline-block;
-    color: #46d369;
+    color: var(--netflix-green);
     margin-right: 15px;
 `;
 export const Year = styled.div`
@@ -67,7 +67,7 @@ export const Seasons = styled.div`
 export const Description = styled.div`
     margin-top: 15px;
     font-size: 20px;
-    color: #999;
+    color: color(--gray);
     width: 40%;
 
     div {
@@ -105,20 +105,19 @@ export const Buttons = styled.div`
     }
 
     .featured--watchbutton {
-        background-color: #FFF;
+        background-color: var(--white);
         color: #000;
     }
     .featured--mylistbutton {
         background-color: rgba(109,109,110,0.7);;
-        
-        color: #FFF;
+        color: var(--white);
     }
 
 `;
 export const Genres = styled.div`
     margin-top: 15px;
     font-size: 18px;
-    color: #999;
+    color: var(--gray);
 
     @media (max-width:760px) {
         font-size: 14px;

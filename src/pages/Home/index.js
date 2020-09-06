@@ -30,6 +30,7 @@ function Home() {
     const loadAll = async () => {
       // Get all movies/series list
       let list = await Tmdb.getHomeList();
+      console.log(list);
       setMovieList(list);
 
       // Get the feature movie data
@@ -37,6 +38,7 @@ function Home() {
       let randomChosen = Math.floor(Math.random() * (orginals[0].items.results.length -1))
       let chosen = orginals[0].items.results[randomChosen];
       let chosenInfo = await Tmdb.getMovieInfo(chosen.id, 'tv');
+      console.log(chosenInfo);
       setFeatureData(chosenInfo);
 
     }
@@ -67,14 +69,14 @@ function Home() {
       <Header backgroundState={headerState}/>
 
       {featureData && 
-        <FeaturedMovie item={featureData} />
+        <FeaturedMovie item={featureData} type="tv" />
       }
       
       {(movieList.length) ? (
         <>
         <MoviesList>
         {movieList.map((item, key) => (
-          <MovieRow key={key} title={item.title} items={item.items}/>
+          <MovieRow key={key} title={item.title} items={item.items} type={item.type}/>
         ))}
         </MoviesList>
 

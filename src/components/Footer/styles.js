@@ -4,16 +4,17 @@ import styled from 'styled-components'
 export const Container = styled.footer`
     margin: 50px 0 20px 0;
     text-align: center;
-    color: #999;
+    color: var(--gray);
+    font-size: 1.3rem;
 
     a {
         transition: all ease .6s;
         font-weight: bold;
         text-decoration: none;
-        color: #999;
+        color: var(--gray);
 
         :hover {
-            color: #E50914;
+            color: var(--netflix-red);
             cursor: pointer
         }
     }
