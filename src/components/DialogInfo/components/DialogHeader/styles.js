@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 /** Dialog header **/
 export const TitleContainer = styled.div`
-    background-image: url("https://image.tmdb.org/t/p/original/7XEtHQoy1hwa8XWaOkSv3rlteea.jpg");
+    background-image: url(${props => props.backgroundImg});
     background-size: cover;
     background-position: center;
     width: 100%;

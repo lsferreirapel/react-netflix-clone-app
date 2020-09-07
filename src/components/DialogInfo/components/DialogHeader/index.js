@@ -19,14 +19,17 @@ import ThumbDownOutlinedIcon from '@material-ui/icons/ThumbDownOutlined';
 import ThumbDownAltIcon from '@material-ui/icons/ThumbDownAlt';
 
 
-const DialogHeader = ({open}) => (
-  <TitleContainer>
+const DialogHeader = ({open, item}) => { 
+  console.log('dialog header: ', item);
+  
+  return(
+  <TitleContainer backgroundImg={`https://image.tmdb.org/t/p/original${item?.items?.poster_path}`}>
     <LinearGradient>
       <CloseButton>
         <button onClick={open} className="close-button">{<CloseIcon fontSize="large" />}</button>
       </CloseButton>
       <TitleInfo>
-        <h1 className="main-title">Fight Club</h1>
+        <h1 className="main-title">{item?.items?.original_name}</h1>
         <Buttons>
             <button className="watch-button">{<PlayArrowIcon fontSize="large"/>} Assistir</button>
             <button className="mylist-button">{<AddIcon fontSize="large"/>}</button>
@@ -36,6 +39,6 @@ const DialogHeader = ({open}) => (
       </TitleInfo>
     </LinearGradient>
   </TitleContainer>
-);
+)};
 
 export default DialogHeader;

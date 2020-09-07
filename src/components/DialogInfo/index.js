@@ -1,5 +1,8 @@
 // import react components
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+// import services
+import Tmdb from '../../services/Tmdb';
 
 // importing dialog material 
 import Dialog from '@material-ui/core/Dialog';
@@ -13,10 +16,29 @@ import DialogSimilar from './components/DialogSimilar';
 import DialogFooter from './components/DialogFooter';
 
 
-export default function ScrollDialog({children, buttonClass="open-button"}) {
+export default function ScrollDialog({children, buttonClass="open-button" , type, itemId}) {
   /* React Hooks */
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState('body');
+  const [items, setItems] = React.useState([]);
+  
+  useEffect(() => {
+    const loadAll = async () => {
+    let list = null;
+    if(type === 'tv') {
+      list = await Tmdb.getTvDialog(itemId);
+      setItems(list);
+    }
+    else if (type === 'movie') {
+      list = await Tmdb.getMovieDialog(itemId);
+      setItems(list);
+    }
+  }
+
+  loadAll();
+
+  console.log('dialog list', items);
+  }, []);
 
   /* Function to open the dialog */ 
   const handleClickOpen = (scrollType='body') => () => {
@@ -46,14 +68,14 @@ export default function ScrollDialog({children, buttonClass="open-button"}) {
       <Dialog open={open} onClose={handleClose} scroll={scroll} aria-labelledby="scroll-dialog-title" aria-describedby="scroll-dialog-description">
 
           <DialogTitle>
-            <DialogHeader open={handleClose} />
+            <DialogHeader open={handleClose} item={items?.find(item => item.slug === 'TV_details')}/>
           </DialogTitle>
 
           <DialogContent dividers={scroll === 'paper'} style={{padding: "48px", paddingTop: "0"}}>
 
-            <DialogDescription />
-            <DialogSimilar />
-            <DialogFooter />
+            <DialogDescription item={items?.filter(item => item.slug === 'TV_details')} credits={items?.filter(item => item.slug === 'TV_credits')} />
+            <DialogSimilar item={items?.filter(item => item.slug === 'TV_similar')} />
+            <DialogFooter item={items?.filter(item => item.slug === 'TV_credits')} />
 
           </DialogContent>
 

@@ -105,19 +105,19 @@ export default {
         return [
             {
                 slug: 'TV_details',
-                items: await basicFetch(`/movie/${tvID}?`)
+                items: await basicFetch(`/tv/${tvID}?`)
             },
             {
                 slug: 'TV_credits',
-                items: await basicFetch(`/movie/${tvID}/credits?`)
+                items: await basicFetch(`/tv/${tvID}/credits?`)
             },
             {
                 slug: 'TV_similar',
-                items: await basicFetch(`/movie/${tvID}/similar?`)
+                items: await basicFetch(`/tv/${tvID}/similar?`)
             },
             {
                 slug: 'TV_trailer',
-                items: await basicFetch(`/movie/${tvID}/videos?`)
+                items: await basicFetch(`/tv/${tvID}/videos?`)
             },
         ]
     }

@@ -1,3 +1,4 @@
+// import React components
 import React from 'react';
 
 // import styles
@@ -6,10 +7,9 @@ import { Container, Name, Info, Rating, Year, Seasons, Description, Buttons, Gen
 // import components 
 import DialogInfo from '../DialogInfo';
 
-const FeaturedMovie = ({item}) => {
-    // const [open, setOpen] = useState(true);
-
+const FeaturedMovie = ({item, type}) => {
     
+
     return(
         <Container 
         backgroundSize='cover'
@@ -27,7 +27,7 @@ const FeaturedMovie = ({item}) => {
                     <Description>{ (item.overview.length >= 150) ? item.overview.slice(0, 145).concat("...") : item.overview }</Description>
                     <Buttons>
                         <a className="featured--watchbutton" href={`/watch/${item.id}` }>► Assistir</a>
-                        <DialogInfo buttonClass="featured--mylistbutton">+ Mais Informações</DialogInfo>
+                        <DialogInfo buttonClass="featured--mylistbutton" type={type} itemId={item.id} >+ Mais Informações</DialogInfo>
                     </Buttons>
                     <Genres><strong>Gêneros:</strong> {item.genres.map(item => item.name).join(', ')}</Genres>
                 </div>
