@@ -2,12 +2,25 @@ import React from 'react';
 
 import { MainInfo, RateInfo, Description,  FilmInfo, Cast, Genres, Tags } from './styles';
 
-const DialogDescription = ({item, credits, type='tv'}) => (
+const DialogDescription = ({item, credits, type='tv'}) => {
+    console.log("description", item);
+    console.log('credits: ', credits);
+
+    const durationSelector = () => {
+        if(type === 'tv') {
+            return `${item?.items?.number_of_seasons} temporada${item?.items?.number_of_seasons != 1 ? 's' : ''}`
+        }    
+        else  {
+            return `${item?.items?.runtime / 60}h ${item?.items?.runtime % 60}min`
+        }
+    }
+
+    return(
     <MainInfo>
         <RateInfo>
-            <span className="rate">84% relevante</span>
-            <div className="year" >1999</div>
-            <span className="duration">{(type === 'tv')? item?.items?.number_of_seasons : (item?.items?.runtime / 60)}</span> {/* if the item is a Movie Season=runtime else Season=season */}
+            <span className="rate">{item?.items?.vote_average * 10}% relevante</span>
+            <div className="year" >{new Date(item?.items?.first_air_date).getFullYear()}</div>
+            <span className="duration">{durationSelector()}</span> 
             <Description>
                 <p>{item?.items?.overview}</p>
             </Description>
@@ -15,25 +28,19 @@ const DialogDescription = ({item, credits, type='tv'}) => (
         <FilmInfo>
             <Cast>
             <span className="name">Elenco: </span>
-            <a>Edward Norton, </a>
-            <a>Brad Pitt, </a>
-            <a>Helena Bonham Carter, </a>
-            <a>Meat Loaf, </a>
+            {credits.items.cast.map((actor, key) => (<a key={key}>{actor.name}, </a>))}
             <a className="seemore">mais</a>
             </Cast>
             <Genres>
             <span className="name">Gêneros: </span>
-            <a>Drama</a>
+            {item.items.genres.map((genre, key) => (<a key={key}>{genre.name}, </a>))}
             </Genres>
             <Tags>
             <span className="name">Tags: </span>
-            <a>Má conduta, </a>
-            <a>Caos, </a>
-            <a>Sabão, </a>
             <a className="seemore">mais</a>
             </Tags>
         </FilmInfo>
     </MainInfo>
-);
+)};
 
 export default DialogDescription;

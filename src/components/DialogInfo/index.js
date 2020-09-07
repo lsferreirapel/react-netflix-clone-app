@@ -73,9 +73,9 @@ export default function ScrollDialog({children, buttonClass="open-button" , type
 
           <DialogContent dividers={scroll === 'paper'} style={{padding: "48px", paddingTop: "0"}}>
 
-            <DialogDescription item={items?.filter(item => item.slug === 'TV_details')} credits={items?.filter(item => item.slug === 'TV_credits')} />
-            <DialogSimilar item={items?.filter(item => item.slug === 'TV_similar')} />
-            <DialogFooter item={items?.filter(item => item.slug === 'TV_credits')} />
+            <DialogDescription item={items?.find(item => item.slug === 'TV_details')} credits={items?.find(item => item.slug === 'TV_credits')} />
+            <DialogSimilar item={items?.find(item => item.slug === 'TV_similar')} />
+            <DialogFooter item={items?.find(item => item.slug === 'TV_credits')} />
 
           </DialogContent>
 
