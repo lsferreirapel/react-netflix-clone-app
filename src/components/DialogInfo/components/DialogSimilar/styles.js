@@ -27,10 +27,37 @@ export const ListCard = styled.div`
     border-radius: .25em;
     overflow: hidden;
     margin-top: 10px;
+    position: relative;
+    height: 350px;
+
 
     .list-card-image {
+        background: url(${props => props.background});
+        background-position: center;
+        background-size: cover;
         width: 100%;
         height: 22vh;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        .image-name, .image-duration {
+            padding: 7px 7px 10px 7px;
+            color: white;
+        }
+
+        .image-name {
+            align-self: center;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .image-duration {
+
+        }
+
     }
     .list-card-info {
         display: flex;
