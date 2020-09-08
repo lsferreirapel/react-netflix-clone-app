@@ -75,7 +75,7 @@ export default function ScrollDialog({children, buttonClass="open-button" , type
 
             <DialogDescription item={items?.find(item => item.slug === 'TV_details')} credits={items?.find(item => item.slug === 'TV_credits')} />
             <DialogSimilar item={items?.find(item => item.slug === 'TV_similar')} />
-            <DialogFooter item={items?.find(item => item.slug === 'TV_credits')} />
+            <DialogFooter details={items?.find(item => item.slug === 'TV_details')} credits={items?.find(item => item.slug === 'TV_credits')} />
 
           </DialogContent>
 
