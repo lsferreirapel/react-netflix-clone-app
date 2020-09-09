@@ -12,8 +12,10 @@ import DialogContent from '@material-ui/core/DialogContent';
 // importing components
 import DialogHeader from './components/DialogHeader';
 import DialogDescription from './components/DialogDescription';
+import DialogSeason from './components/DialogSeason';
 import DialogSimilar from './components/DialogSimilar';
 import DialogFooter from './components/DialogFooter';
+
 
 
 export default function ScrollDialog({children, buttonClass="open-button" , type, itemId}) {
@@ -74,6 +76,9 @@ export default function ScrollDialog({children, buttonClass="open-button" , type
           <DialogContent dividers={scroll === 'paper'} style={{padding: "48px", paddingTop: "0"}}>
 
             <DialogDescription item={items?.find(item => item.slug === 'TV_details')} credits={items?.find(item => item.slug === 'TV_credits')} />
+
+            {(type === 'tv') ? (<DialogSeason item={items?.find(item => item.slug === 'TV_seasons')} />) : ""}
+
             <DialogSimilar item={items?.find(item => item.slug === 'TV_similar')} />
             <DialogFooter details={items?.find(item => item.slug === 'TV_details')} credits={items?.find(item => item.slug === 'TV_credits')} />
 

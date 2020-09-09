@@ -112,6 +112,10 @@ export default {
                 items: await basicFetch(`/tv/${tvID}/credits?`)
             },
             {
+                slug: 'TV_seasons',
+                items: await basicFetch(`/tv/${tvID}/season/1?`)
+            },
+            {
                 slug: 'TV_similar',
                 items: await basicFetch(`/tv/${tvID}/similar?`)
             },

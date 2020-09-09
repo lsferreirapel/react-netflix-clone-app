@@ -28,12 +28,12 @@ const DialogDescription = ({item, credits, type='tv'}) => {
         <FilmInfo>
             <Cast>
                 <span className="name">Elenco: </span>
-                {credits.items.cast.map((actor, key) => (<a key={key}>{actor.name}, </a>))}
+                {credits?.items?.cast?.filter((item, index) => index < 4)?.map((actor, key) => (<a key={key}>{actor.name}, </a>))}
                 <a className="seemore">mais</a>
             </Cast>
             <Genres>
                 <span className="name">Gêneros: </span>
-                {item.items.genres.map((genre, key) => (<a key={key}>{genre.name}, </a>))}
+                {item?.items?.genres?.map((genre, key) => (<a key={key}>{genre.name}, </a>))}
             </Genres>
             <Tags>
                 <span className="name">Tags: </span>
