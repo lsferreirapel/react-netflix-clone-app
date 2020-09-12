@@ -1,5 +1,9 @@
 // import React components
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+
+// importing services
+import Tmdb from '../../services/Tmdb';
 
 // import styles
 import { Container, Name, Info, Rating, Year, Seasons, Description, Buttons, Genres } from './styles';
@@ -26,7 +30,7 @@ const FeaturedMovie = ({item, type}) => {
                     </Info>
                     <Description>{ (item.overview.length >= 150) ? item.overview.slice(0, 145).concat("...") : item.overview }</Description>
                     <Buttons>
-                        <a className="featured--watchbutton" href={`/watch/${item.id}` }>► Assistir</a>
+                        <Link className="featured--watchbutton" to={`trailer/${type}/${item.id}`}>► Assistir</Link>
                         <DialogInfo buttonClass="featured--mylistbutton" type={type} itemId={item.id} >+ Mais Informações</DialogInfo>
                     </Buttons>
                     <Genres><strong>Gêneros:</strong> {item.genres.map(item => item.name).join(', ')}</Genres>

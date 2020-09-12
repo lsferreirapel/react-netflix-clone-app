@@ -18,7 +18,6 @@ const DialogSimilar = (similar) => {
                     <ListCard key={key} background={(item.backdrop_path)? `https://image.tmdb.org/t/p/original${item.backdrop_path}` : `https://image.tmdb.org/t/p/original${item.poster_path}`}>
                         <div className="list-card-image">
                             <span className="image-duration">1h 20min</span>
-                            <span className="image-name">{item.name}</span>
                         </div>
                         <div className="list-card-info">
                             <span className="card-info-rate">{item.vote_average * 10}% relevante</span>

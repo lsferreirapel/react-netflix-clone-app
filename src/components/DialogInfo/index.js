@@ -30,16 +30,18 @@ export default function ScrollDialog({children, buttonClass="open-button" , type
     if(type === 'tv') {
       list = await Tmdb.getTvDialog(itemId);
       setItems(list);
+      console.log('dialog tv list', list);
     }
     else if (type === 'movie') {
       list = await Tmdb.getMovieDialog(itemId);
       setItems(list);
+      console.log('dialog movie list', list);
     }
   }
 
   loadAll();
 
-  console.log('dialog list', items);
+  
   }, []);
 
   /* Function to open the dialog */ 
@@ -70,7 +72,7 @@ export default function ScrollDialog({children, buttonClass="open-button" , type
       <Dialog open={open} onClose={handleClose} scroll={scroll} aria-labelledby="scroll-dialog-title" aria-describedby="scroll-dialog-description">
 
           <DialogTitle>
-            <DialogHeader open={handleClose} item={items?.find(item => item.slug === 'TV_details')}/>
+            <DialogHeader open={handleClose} item={items?.find(item => item.slug === 'TV_details')} type={type}/>
           </DialogTitle>
 
           <DialogContent dividers={scroll === 'paper'} style={{padding: "48px", paddingTop: "0"}}>

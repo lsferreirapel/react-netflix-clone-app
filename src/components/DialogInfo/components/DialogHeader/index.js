@@ -1,5 +1,6 @@
 // Import React components
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Import Header style 
 import { TitleContainer, LinearGradient, CloseButton, TitleInfo, Buttons } from './styles';
@@ -19,7 +20,7 @@ import ThumbDownOutlinedIcon from '@material-ui/icons/ThumbDownOutlined';
 import ThumbDownAltIcon from '@material-ui/icons/ThumbDownAlt';
 
 
-const DialogHeader = ({open, item}) => { 
+const DialogHeader = ({open, item, type}) => { 
   console.log('dialog header: ', item);
   
   return(
@@ -31,7 +32,7 @@ const DialogHeader = ({open, item}) => {
       <TitleInfo>
         <h1 className="main-title">{item?.items?.original_name}</h1>
         <Buttons>
-            <button className="watch-button">{<PlayArrowIcon fontSize="large"/>} Assistir</button>
+        <Link className="watch-button" to={`trailer/${type}/${item?.items?.id}`}>► Assistir</Link>
             <button className="mylist-button">{<AddIcon fontSize="large"/>}</button>
             <button className="like-button">{<ThumbUpOutlinedIcon fontSize="large"/>}</button>
             <button className="dislike-button">{<ThumbDownOutlinedIcon fontSize="large"/>}</button>

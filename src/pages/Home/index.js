@@ -1,5 +1,6 @@
 // importing react components
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // import services
 import Tmdb from '../../services/Tmdb';
@@ -10,6 +11,7 @@ import Header from '../../components/Header';
 import FeaturedMovie from '../../components/FeaturedMovie';
 import MovieRow from '../../components/MovieRow';
 import Footer from '../../components/Footer';
+import TrailerPage from '../TrailerPage';
 
 // importing styles
 import { Page, MoviesList, Loading } from './styles';
@@ -65,7 +67,6 @@ function Home() {
 
   return (
     <Page>
-      
       <Header backgroundState={headerState}/>
 
       {featureData && 
@@ -74,6 +75,7 @@ function Home() {
       
       {(movieList.length) ? (
         <>
+        <Link className="test" to="/trailer">Trailer</Link>
         <MoviesList>
         {movieList.map((item, key) => (
           <MovieRow key={key} title={item.title} items={item.items} type={item.type}/>

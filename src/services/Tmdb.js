@@ -15,8 +15,8 @@ const API_BASE = 'https://api.themoviedb.org/3';
 
 
 
-const basicFetch = async (endpoint) => {
-    const request = await fetch(`${API_BASE}${endpoint}language=pt-BR&api_key=${API_KEY}`);
+const basicFetch = async (endpoint, language="pt-BR") => {
+    const request = await fetch(`${API_BASE}${endpoint}language=${language}&api_key=${API_KEY}`);
     const json = await request.json();
     return json;
 }
@@ -94,11 +94,7 @@ export default {
             {
                 slug: 'movie_similar',
                 items: await basicFetch(`/movie/${movieID}/similar?`)
-            },
-            {
-                slug: 'movie_trailer',
-                items: await basicFetch(`/movie/${movieID}/videos?`)
-            },
+            }
         ]
     },
     getTvDialog: async (tvID) => {
@@ -118,12 +114,20 @@ export default {
             {
                 slug: 'TV_similar',
                 items: await basicFetch(`/tv/${tvID}/similar?`)
-            },
-            {
-                slug: 'TV_trailer',
-                items: await basicFetch(`/tv/${tvID}/videos?`)
-            },
+            }
         ]
+    },
+    getTvVideos: async (TvID) => {
+        return {
+            slug: 'TV_trailer',
+            items: await basicFetch(`/tv/${TvID}/videos?`, 'en-US')
+        } 
+    },
+    getMovieVideos: async (movieID) => {
+        return {
+            slug: 'movie_trailer',
+            items: await basicFetch(`/movie/${movieID}/videos?`, 'en-US')
+        }
     }
 
     /*

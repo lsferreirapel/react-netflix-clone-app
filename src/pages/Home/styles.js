@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 
 export const Page = styled.div`
-
+ .test {
+    font-size: 20px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 999;
+ }
 `;
 
 export const MoviesList = styled.section`
