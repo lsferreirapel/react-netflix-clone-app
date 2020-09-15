@@ -15,18 +15,80 @@ export const Container = styled.header`
     transition: all ease .5s;
 `;
 
+export const PrimaryNavegation = styled.div`
+    display: flex;
+    align-items: center;
+`;
+
 export const Logo = styled.div`
     height: 32px;
+    margin-right: 25px;
     
     img {
         height:100%;
     }
 `;
+
+export const Nav = styled.div`
+    display: flex;
+
+`;
+export const List = styled.ul`
+    display: flex;
+    cursor: pointer;
+`;
+
+export const NavItem = styled.li`
+    padding: 0px 10px;
+
+    a {
+        font-size: 1.2rem;
+    }
+
+    .active {
+        font-weight: 700;
+    }
+`;
+export const SecondaryNavegation = styled.div`
+    display: flex;
+    align-items: center;
+
+    .kids {
+        font-size: 1.3em;
+        margin-right: 20px;
+    }
+
+    .notification, .gift, .search {
+        font-size: 2.5em;
+        margin-right: 20px;
+    }
+    
+    .notification {
+
+    }
+    .gift {
+
+    }
+    .search {
+
+    }
+
+`;
+
 export const User = styled.div`
-    height: 35px; 
+    height: 30px; 
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
 
     img {
         height: 100%;
         border-radius: 3px;
+        
+    }
+
+    .arrow-down {
+        font-size: 23px;
+        margin-left: 5px;
     }
 `;
