@@ -19,8 +19,8 @@ import { Page, MoviesList, Loading } from './styles';
 // importing loading gif
 import LoadingGif from '../../assets/img/loading.gif'
 
-function Home() {
-  
+function Home({background}) {
+  console.log('background: ', background);
   // adding states
   const [movieList, setMovieList] = useState([]);
   const [featureData, setFeatureData] = useState(null);
@@ -75,7 +75,6 @@ function Home() {
       
       {(movieList.length) ? (
         <>
-        <Link className="test" to="/trailer">Trailer</Link>
         <MoviesList>
         {movieList.map((item, key) => (
           <MovieRow key={key} title={item.title} items={item.items} type={item.type}/>

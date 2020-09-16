@@ -107,10 +107,24 @@ export const Buttons = styled.div`
     .featured--watchbutton {
         background-color: var(--white);
         color: #000;
+        display: flex;
+        align-items: center;
+
+        .play-icon {
+            margin-right: 5px;
+            font-size: 25px;
+        }
     }
     .featured--mylistbutton {
         background-color: rgba(109,109,110,0.7);;
         color: var(--white);
+        display: flex;
+        align-items: center;
+        
+        .info-icon {
+            margin-right: 5px;
+            font-size: 25px;
+        }
     }
 
 `;

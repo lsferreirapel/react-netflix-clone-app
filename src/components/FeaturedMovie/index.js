@@ -11,6 +11,10 @@ import { Container, Name, Info, Rating, Year, Seasons, Description, Buttons, Gen
 // import components 
 import DialogInfo from '../DialogInfo';
 
+// import icons from material-ui
+import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+
 const FeaturedMovie = ({item, type}) => {
     
 
@@ -30,8 +34,8 @@ const FeaturedMovie = ({item, type}) => {
                     </Info>
                     <Description>{ (item.overview.length >= 150) ? item.overview.slice(0, 145).concat("...") : item.overview }</Description>
                     <Buttons>
-                        <Link className="featured--watchbutton" to={`trailer/${type}/${item.id}`}>► Assistir</Link>
-                        <DialogInfo buttonClass="featured--mylistbutton" type={type} itemId={item.id} >+ Mais Informações</DialogInfo>
+                        <Link className="featured--watchbutton" to={`trailer/${type}/${item.id}`}>{(<PlayArrowIcon className="play-icon"/>)} Assistir</Link>
+                        <DialogInfo buttonClass="featured--mylistbutton" type={type} itemId={item.id} >{(<InfoOutlinedIcon className="info-icon"/>)} Mais Informações</DialogInfo>
                     </Buttons>
                     <Genres><strong>Gêneros:</strong> {item.genres.map(item => item.name).join(', ')}</Genres>
                 </div>

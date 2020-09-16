@@ -32,10 +32,10 @@ const DialogHeader = ({open, item, type}) => {
       <TitleInfo>
         <h1 className="main-title">{item?.items?.original_name}</h1>
         <Buttons>
-        <Link className="watch-button" to={`trailer/${type}/${item?.items?.id}`}>► Assistir</Link>
-            <button className="mylist-button">{<AddIcon fontSize="large"/>}</button>
-            <button className="like-button">{<ThumbUpOutlinedIcon fontSize="large"/>}</button>
-            <button className="dislike-button">{<ThumbDownOutlinedIcon fontSize="large"/>}</button>
+          <Link className="watch-button" to={`trailer/${type}/${item?.items?.id}`}>{(<PlayArrowIcon style={{fontSize: "25px" , marginRight: "5px"}} />)} Assistir</Link>
+          <button className="mylist-button">{<AddIcon fontSize="large"/>}</button>
+          <button className="like-button">{<ThumbUpOutlinedIcon fontSize="large"/>}</button>
+          <button className="dislike-button">{<ThumbDownOutlinedIcon fontSize="large"/>}</button>
         </Buttons>
       </TitleInfo>
     </LinearGradient>

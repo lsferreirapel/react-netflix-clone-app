@@ -11,7 +11,7 @@ export const Container = styled.header`
     justify-content: space-between;
     align-items: center;
     padding: 0 30px;
-    background-image: linear-gradient(rgb(20, 20, 20), ${props => props.background});  
+    background-image: linear-gradient(rgb(0, 0, 0), ${props => props.background});  
     transition: all ease .5s;
 `;
 
@@ -42,7 +42,7 @@ export const NavItem = styled.li`
     padding: 0px 10px;
 
     a {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 
     .active {
@@ -54,12 +54,12 @@ export const SecondaryNavegation = styled.div`
     align-items: center;
 
     .kids {
-        font-size: 1.3em;
+        font-size: 1.5em;
         margin-right: 20px;
     }
 
     .notification, .gift, .search {
-        font-size: 2.5em;
+        font-size: 2.7em;
         margin-right: 20px;
     }
     
@@ -90,5 +90,6 @@ export const User = styled.div`
     .arrow-down {
         font-size: 23px;
         margin-left: 5px;
+        color: #fff;
     }
 `;
