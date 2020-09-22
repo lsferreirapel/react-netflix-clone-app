@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 
 import { Container, Options, Title, OptionsList, OptionsItem } from './styles';
 
-import Header from '../../components/Header';
+// import components
+import { Header } from '../../components';
 
-const LoginPage = () => (
+export const LoginPage = () => (
   <Container>
     <Header backgroundState="transparent" options={false}/>
     <Options>
@@ -36,5 +37,3 @@ const LoginPage = () => (
     </Options>
   </Container>
 )
-
-export default LoginPage;

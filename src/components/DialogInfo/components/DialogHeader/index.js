@@ -20,7 +20,7 @@ import ThumbDownOutlinedIcon from '@material-ui/icons/ThumbDownOutlined';
 import ThumbDownAltIcon from '@material-ui/icons/ThumbDownAlt';
 
 
-const DialogHeader = ({open, item, type}) => { 
+export const DialogHeader = ({open, item, type}) => { 
   console.log('dialog header: ', item);
   
   return(
@@ -41,5 +41,3 @@ const DialogHeader = ({open, item, type}) => {
     </LinearGradient>
   </TitleContainer>
 )};
-
-export default DialogHeader;

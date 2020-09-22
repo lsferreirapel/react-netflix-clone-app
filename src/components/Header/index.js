@@ -10,7 +10,7 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 // import styles
 import { Container, PrimaryNavegation, Logo, Nav, List, NavItem, SecondaryNavegation, User  } from './styles';
 
-const Header = ({backgroundState, options=true}) => (
+export const Header = ({backgroundState, options=true}) => (
     <Container background={backgroundState}>
         <PrimaryNavegation >
             <Logo as={Link} to="/" >
@@ -35,7 +35,7 @@ const Header = ({backgroundState, options=true}) => (
                 <CardGiftcardIcon className="gift"/>
                 <NotificationsIcon className="notification"/>
                 <User as={Link} to="/login">
-                    <img src="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" alt="User icon"></img>
+                    <img src="https://occ-0-1543-1356.1.nflxso.net/dnm/api/v6/Z-WHgqd_TeJxSuha8aZ5WpyLcX8/AAAABYCq-HPaBmwWzyEo8UjC3jQ7a2mKJhU4uPbQwFrauKbu9_-6GpfPccnQh3UWZvsGLQ1MwLo_4YZ-kuTiAsqpq0oEdPXS.png?r=f71" alt="User icon"></img>
                     <ArrowDropDownIcon className="arrow-down"/>
                 </User>
             </SecondaryNavegation>
@@ -43,5 +43,3 @@ const Header = ({backgroundState, options=true}) => (
         
     </Container>
 )
-
-export default Header;

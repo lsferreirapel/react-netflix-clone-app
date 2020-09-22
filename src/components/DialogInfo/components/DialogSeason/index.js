@@ -4,7 +4,7 @@ import React from 'react';
 //Importing styles
 import { SeasonList, SeasonHeader, EpisodeList, EpisodeItem, Index, Image, MetaData } from './styles';
 
-export default function DialogSeason({item}) {
+export function DialogSeason({item}) {
 
     console.log('seasons', item);
     return(

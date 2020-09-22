@@ -2,9 +2,11 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 // Pages import
-import Home from '../pages/Home'
-import TrailerPage from '../pages/TrailerPage'
-import LoginPage from '../pages/LoginPage';
+import { Home, TrailerPage, LoginPage } from '../pages';
+
+// import Home from '../pages/Home'
+// import TrailerPage from '../pages/TrailerPage'
+// import LoginPage from '../pages/LoginPage';
 
 const Routes = () => (
     <Switch>

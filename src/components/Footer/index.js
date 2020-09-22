@@ -10,7 +10,7 @@ import TMDB from '../../assets/img/icon/tmdb-icon.svg';
 import GitHub from '../../assets/img/icon/github-icon.png';
 import Instagram from '../../assets/img/icon/intagram-icon.png';
 
-const Footer = () => (
+export const Footer = () => (
     <Container>
         <Icons>
             <a href="https://netflix.com/" target="_blank" rel="noopener noreferrer"><img src={Netflix} alt="NetFlix logo"></img></a>
@@ -23,5 +23,3 @@ const Footer = () => (
         Dados pegos de <a href="https://Themoviedb.org/" target="_blank" rel="noopener noreferrer">Themoviedb.org</a>
     </Container>
 )
-
-export default Footer;

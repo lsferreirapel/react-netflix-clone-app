@@ -7,7 +7,7 @@ import { Sugestion, List, ListCard, SectionDivider } from './styles';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 
-const DialogSimilar = (similar) => {
+export const DialogSimilar = (similar) => {
     console.log("similar:", similar);
     return(
     <>
@@ -34,5 +34,3 @@ const DialogSimilar = (similar) => {
         </SectionDivider>
     </>
 )};
-
-export default DialogSimilar;

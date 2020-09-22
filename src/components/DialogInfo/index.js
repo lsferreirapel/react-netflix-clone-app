@@ -10,15 +10,9 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
 
 // importing components
-import DialogHeader from './components/DialogHeader';
-import DialogDescription from './components/DialogDescription';
-import DialogSeason from './components/DialogSeason';
-import DialogSimilar from './components/DialogSimilar';
-import DialogFooter from './components/DialogFooter';
+import { DialogHeader, DialogDescription, DialogSeason, DialogSimilar, DialogFooter} from './components';
 
-
-
-export default function ScrollDialog({children, buttonClass="open-button" , type, itemId}) {
+export function DialogInfo({children, buttonClass="open-button" , type, itemId}) {
   /* React Hooks */
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState('body');

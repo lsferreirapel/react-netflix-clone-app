@@ -9,13 +9,13 @@ import Tmdb from '../../services/Tmdb';
 import { Container, Name, Info, Rating, Year, Seasons, Description, Buttons, Genres } from './styles';
 
 // import components 
-import DialogInfo from '../DialogInfo';
+import { DialogInfo } from '../DialogInfo';
 
 // import icons from material-ui
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 
-const FeaturedMovie = ({item, type}) => {
+export const FeaturedMovie = ({item, type}) => {
     
 
     return(
@@ -43,4 +43,3 @@ const FeaturedMovie = ({item, type}) => {
         </Container>
     )
 }
-export default FeaturedMovie;

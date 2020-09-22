@@ -8,7 +8,7 @@ import { Container, ListArea, List, Item, MoveLeft, MoveRight } from './styles';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
-const MovieRow = ({title, items}) => {
+export const MovieRow = ({title, items}) => {
 
     const [scrollX, setScrollX] = useState(0);
 
@@ -64,5 +64,3 @@ const MovieRow = ({title, items}) => {
         </Container>
     );
 }
-
-export default MovieRow;

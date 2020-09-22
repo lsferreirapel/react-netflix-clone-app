@@ -2,7 +2,7 @@ import React from 'react';
 
 import { MainInfo, RateInfo, Description,  FilmInfo, Cast, Genres, Tags } from './styles';
 
-const DialogDescription = ({item, credits, type='tv'}) => {
+export const DialogDescription = ({item, credits, type='tv'}) => {
     console.log("description", item);
     console.log('credits: ', credits);
 
@@ -42,5 +42,3 @@ const DialogDescription = ({item, credits, type='tv'}) => {
         </FilmInfo>
     </MainInfo>
 )};
-
-export default DialogDescription;

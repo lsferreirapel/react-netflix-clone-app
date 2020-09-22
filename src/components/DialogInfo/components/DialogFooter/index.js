@@ -2,7 +2,7 @@ import React from 'react';
 
 import { About, AboutInfo, Director, AboutCast, AboutGenres, AboutScript, AboutTags } from './styles';
 
-const DialogFooter = ({details, credits}) => {
+export const DialogFooter = ({details, credits}) => {
     console.log('footer: ', details, credits);
     return(
     <About>
@@ -30,5 +30,3 @@ const DialogFooter = ({details, credits}) => {
         </AboutInfo>
     </About>
 )};
-
-export default DialogFooter;

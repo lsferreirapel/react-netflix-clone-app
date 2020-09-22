@@ -6,12 +6,7 @@ import { Link } from 'react-router-dom';
 import Tmdb from '../../services/Tmdb';
 
 // importing page components
-// import DialogInfo from '../../components/DialogInfo';
-import Header from '../../components/Header';
-import FeaturedMovie from '../../components/FeaturedMovie';
-import MovieRow from '../../components/MovieRow';
-import Footer from '../../components/Footer';
-import TrailerPage from '../TrailerPage';
+import { Header, FeaturedMovie, MovieRow, Footer } from '../../components';
 
 // importing styles
 import { Page, MoviesList, Loading } from './styles';
@@ -19,7 +14,7 @@ import { Page, MoviesList, Loading } from './styles';
 // importing loading gif
 import LoadingGif from '../../assets/img/loading.gif'
 
-function Home({background}) {
+export function Home({background}) {
   console.log('background: ', background);
   // adding states
   const [movieList, setMovieList] = useState([]);
@@ -94,5 +89,3 @@ function Home({background}) {
     </Page>
   )
 }
-
-export default Home;
